@@ -16,7 +16,7 @@ const r = pluck(
 
 console.log(r);
 
-// Analytics events -
+// Analytics or telemetary events -
 interface BaseEvent {
   time: number;
   user: string;
