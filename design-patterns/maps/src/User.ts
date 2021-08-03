@@ -1,4 +1,5 @@
 import faker from "faker";
+import { Mappable } from "./CustomMap";
 
 // File naming convention - capital U in User.ts
 // represents, exportable class
@@ -8,12 +9,17 @@ import faker from "faker";
 
 // export convention in TS - don't use default export, it's a community convention
 
-export class User {
+/* 
+  implements - we tell TS, help us... help User classs satisfy Mappable interface
+  hence, TS will enforce User class to have all the properies/methods implemented inside it.
+*/
+export class User implements Mappable {
   name: string;
   location: {
     lat: number;
     lng: number;
   };
+  color: string = "red";
 
   constructor() {
     this.name = faker.name.firstName();

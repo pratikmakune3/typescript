@@ -5,21 +5,24 @@
   Instruction to every other class
   on how they can be an argument to 'addMarker'
 */
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
   };
   markerContent(): string;
+  color: string;
 }
 
 export class CustomMap {
   // ref variable which has a ref to google map
   // Making it private in order to not have it's access, outside of CustomMap class
+  // that could potentially decrease the surface area of google map apis to other devs from other files
   private googleMap: google.maps.Map;
 
   // By taking in divId -> increase the re-usability
   constructor(divId: string) {
+    // @ts-ignore
     this.googleMap = new google.maps.Map(document.getElementById(divId), {
       zoom: 1,
       center: {

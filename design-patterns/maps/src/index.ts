@@ -23,6 +23,9 @@ import { CustomMap } from "./CustomMap";
   //     lng: 0,
   //   },
   // });
+
+  We want to restrict the amount of the surface area of apis exposed inside index.ts
+  they should be able to do what's only allowed... and restrict the access to google map apis
  */
 
 const user = new User();
